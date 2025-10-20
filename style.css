@@ -1,0 +1,644 @@
+/* --- NEW THEME: Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* General Styling */
+body {
+    /* --- THEME CHANGE: Dark background and light text --- */
+    font-family: 'Roboto', sans-serif; /* Changed font */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    /* --- THEME CHANGE: Alternating dark sections --- */
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333; /* Add subtle separator */
+}
+
+section:nth-child(even) {
+    background-color: #242424; /* Slightly lighter dark */
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    /* --- THEME CHANGE: "Tech" font and accent color --- */
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff; /* Bright blue accent */
+    letter-spacing: 1px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    display: inline-block; /* Make border only as wide as text */
+    
+    /* --- MODIFIED: Apply pulsing glow animation --- */
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+    animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    width: 100%;
+    /* --- THEME CHANGE: Darker nav with accent border --- */
+    background-color: rgba(18, 18, 18, 0.9); /* Dark, slightly transparent */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    border-bottom: 2px solid #00aaff; /* Accent border */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    /* --- THEME CHANGE: "Tech" font and hover effect --- */
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00aaff; /* Accent color on hover */
+}
+
+/* Hero Section (Styling for if you uncomment it) */
+.hero {
+    /* --- THEME CHANGE: Dark hero --- */
+    background-color: #222; 
+    color: white;
+    padding: 100px 20px;
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* --- THEME CHANGE: Accent border --- */
+    border: 3px solid #00aaff;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); /* Glow effect */
+}
+
+/* Card Layout for Projects, Activities & Certificates */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    /* --- THEME CHANGE: Dark cards with glow effect --- */
+    background: #2a2a2a; /* Dark card background */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    overflow: hidden; 
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px); /* Lift up effect */
+    
+    /* --- MODIFIED: Replaced static glow with animation --- */
+    animation: pulse-card-hover 1.5s infinite ease-in-out;
+    /* border-color: #00aaff; (Handled by animation) */
+    /* box-shadow: 0 0 25px rgba(0, 170, 255, 0.7); (Handled by animation) */
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    opacity: 0.85; /* Slightly dim image */
+    transition: opacity 0.2s;
+}
+
+.card:hover img {
+    opacity: 1; /* Full brightness on hover */
+}
+
+.card h3, .card p {
+    padding: 0 15px 15px;
+    text-align: left;
+}
+
+.card h3 {
+    /* --- THEME CHANGE: Accent color for card title --- */
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+}
+
+.card p {
+    /* --- THEME CHANGE: Lighter text for card description --- */
+    color: #ccc;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* --- THEME CHANGE: Darker overlay --- */
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    /* --- THEME CHANGE: Dark modal content --- */
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #00aaff; /* Accent border */
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.5); /* Glow effect */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #00aaff; /* Accent on hover */
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    /* --- THEME CHANGE: "Tech" button style --- */
+    font-family: 'Orbitron', sans-serif;
+    background-color: #00aaff;
+    border: 1px solid #00aaff;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #00aaff;
+}
+
+/* ทำให้ Modal กว้างขึ้น */
+.modal-content-large {
+    max-width: 800px;
+}
+
+/* --- Carousel Styles (For Projects) --- */
+.carousel {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto 30px;
+}
+
+.carousel-track-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #111; /* Dark background for image container */
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+    display: flex;
+}
+
+.carousel-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* --- THEME CHANGE: Dark background for images --- */
+    background-color: #111;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* --- THEME CHANGE: Themed buttons --- */
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00aaff;
+    color: #00aaff; /* This will color the SVG icon */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background-color 0.2s;
+}
+.carousel-button:hover {
+    background: rgba(0, 170, 255, 0.3); /* Accent background on hover */
+}
+
+.carousel-button--left {
+    left: 10px;
+}
+
+.carousel-button--right {
+    right: 10px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel-indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    /* --- THEME CHANGE: Themed dots --- */
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.carousel-indicator.current-slide {
+    background: #00aaff; /* Accent for current dot */
+}
+
+
+/* --- Activity Carousel Styles (Themed) --- */
+.activity-carousel .slick-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    /* --- THEME CHANGE: Dark background --- */
+    background-color: #333;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* ซ่อนลูกศรของ Slick */
+.activity-carousel .slick-arrow {
+    display: none !important;
+}
+
+/* ปรับแต่งจุด Nav */
+.activity-carousel .slick-dots li button:before {
+    font-size: 12px;
+    /* --- THEME CHANGE: Themed dots --- */
+    color: #888;
+}
+
+.activity-carousel .slick-dots li.slick-active button:before {
+    /* --- THEME CHANGE: Accent dot --- */
+    color: #00aaff;
+}
+
+
+/* --- Project Details Styles --- */
+.project-details {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.project-details h3 {
+    margin-top: 25px;
+    /* --- THEME CHANGE: Accent color and themed border --- */
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background: #1f1f1f; /* Dark background for tech stack */
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.tech-stack img {
+    height: 40px;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.tech-stack img:hover {
+    transform: scale(1.1);
+    /* --- THEME CHANGE: White glow on hover --- */
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+
+/* ---------------------------------------------
+--- NEW ADDITIONS: Animations & Scrollbar ---
+---------------------------------------------
+*/
+
+/* --- ADDITION: Pulsing Glow Animation for Headers --- */
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+    color: #00aaff;
+  }
+  50% {
+    text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff;
+    color: #55d4ff; /* Brighter color at peak */
+  }
+  100% {
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+    color: #00aaff;
+  }
+}
+
+/* --- ADDITION: Pulsing Card Hover Animation --- */
+@keyframes pulse-card-hover {
+    0% { 
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); 
+        border-color: #00aaff; 
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(0, 170, 255, 1); 
+        border-color: #55d4ff; /* Brighter border at peak */
+    }
+    100% { 
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); 
+        border-color: #00aaff; 
+    }
+}
+
+/* --- ADDITION: Custom Scrollbar (Themed) --- */
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #00aaff #1a1a1a;
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f1f1f; /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00aaff; /* Accent color */
+    border-radius: 10px;
+    border: 2px solid #1f1f1f; /* Padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0077ff; /* Brighter on hover */
+}
+
+
+/* ==============================================
+=== โค้ดใหม่สำหรับ HERO SECTION (เพิ่มส่วนนี้) ===
+==============================================
+*/
+
+/* --- Hero Section --- */
+.hero {
+    display: flex; /* ใช้ flex เพื่อจัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    align-items: center;
+    justify-content: center;
+    /* *** MODIFIED: แก้ไข .hero เดิมให้เป็นแบบนี้ *** */
+    /* เพิ่ม padding-top 140px เพื่อไม่ให้เนื้อหาถูก nav บัง */
+    padding: 140px 20px 60px 20px; 
+    min-height: 100vh; /* ทำให้ section สูงเต็มหน้าจอ */
+    color: white;
+    
+    /* === นี่คือส่วนพื้นหลังที่ user ขอครับ === */
+    /* 1. ใส่รูปพื้นหลัง (ผมใช้รูป placeholder ที่เข้ากับธีม) */
+    /* ถ้าคุณมีรูปของตัวเอง ให้เปลี่ยน URL ตรงนี้ครับ */
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1920&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* ทำให้พื้นหลังอยู่นิ่งๆ (Parallax effect) */
+    
+    /* 2. ใส่สีเข้มๆ ทับ (เหมือนในตัวอย่าง) */
+    position: relative;
+    z-index: 1;
+}
+
+/* 3. นี่คือตัว overlay สีเข้มๆ ครับ */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ใช้สีพื้นหลังเดิมของเว็บ (#1a1a1a) 
+      แต่ตั้งค่าความโปร่งใส (0.85) 
+      เพื่อให้ยังพอมองเห็นรูปข้างหลัง
+    */
+    background-color: rgba(26, 26, 26, 0.85); /* 1a1a1a with 85% opacity */
+    z-index: 2; /* ให้อยู่บน background-image */
+}
+
+/* Container สำหรับจัด layout (text ซ้าย, image ขวา) */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* เว้นระยะห่างระหว่าง text และ image */
+    gap: 40px; /* ช่องว่างระหว่าง text และ image */
+    width: 100%;
+    max-width: 1100px; /* จำกัดความกว้างสูงสุด */
+    margin: 0 auto;
+    position: relative; /* ทำให้เนื้อหาอยู่บน overlay */
+    z-index: 3;
+    flex-wrap: wrap; /* ทำให้ปัดขึ้น-ลงได้ในจอมือถือ */
+}
+
+.hero-text {
+    flex: 1; /* ให้ส่วน text กินพื้นที่ที่เหลือ */
+    min-width: 300px; /* ความกว้างขั้นต่ำ */
+
+    transform: translateY(-50px);
+}
+
+/* --- จัดสไตล์ข้อความใน Hero --- */
+.hero-text h2 {
+    font-size: 1.8em;
+    font-family: 'Roboto', sans-serif; /* ใช้ฟอนต์ปกติสำหรับ "Hi, I'm..." */
+    color: #ccc;
+    font-weight: 400;
+    text-shadow: none; /* ลบเงาเรืองแสงของ h2 ทั่วไป */
+    animation: none; /* ลบ animation */
+    border: none; /* ลบเส้นใต้ */
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    text-align: left; /* จัดชิดซ้าย */
+}
+
+.hero-text h1 {
+    font-size: 3.5em; /* ทำให้ "About me" (Role) ตัวใหญ่ */
+    font-family: 'Orbitron', sans-serif; /* ใช้ฟอนต์ "Tech" */
+    color: #00aaff; /* สี CI ของเว็บ */
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(0, 170, 255, 0.7); /* เพิ่มเงาเรืองแสง */
+    text-align: left; /* จัดชิดซ้าย */
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-align: left; /* จัดชิดซ้าย */
+}
+/* --- จบสไตล์ข้อความ --- */
+
+
+/* --- จัดสไตล์รูปโปรไฟล์ --- */
+.hero-image {
+    flex-basis: 350px; /* กำหนดขนาดพื้นฐานให้รูป */
+    flex-shrink: 0;
+    text-align: center; 
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 350px; /* ขนาดใหญ่สุด 350px */
+    height: auto;
+    border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+    border: 5px solid #00aaff; /* ใส่ขอบสี CI */
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.6); /* ใส่เงาเรืองแสง */
+}
+
+
+/* --- Responsive สำหรับ Hero (จอมือถือ) --- */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px; /* ลด padding ลง */
+        min-height: 80vh; /* ลดความสูงลงเล็กน้อย */
+    }
+    .hero-container {
+        /* สลับลำดับ (เอารูปขึ้นก่อนข้อความ) และจัดกลาง */
+        flex-direction: column-reverse; 
+        text-align: center;
+    }
+    /* จัดข้อความทั้งหมดให้อยู่ตรงกลาง */
+    .hero-text h1, .hero-text h2, .hero-text p {
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 2.5em; /* ลดขนาดฟอนต์ในมือถือ */
+    }
+    .hero-image {
+        margin-bottom: 30px;
+    }
+    .hero-image img {
+        max-width: 250px; /* ลดขนาดรูปในมือถือ */
+    }
+}
+
+/* ==============================================
+=== โค้ดใหม่สำหรับ MY SKILLS (เพิ่มส่วนนี้) ===
+==============================================
+*/
+
+.skills-box {
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังสีดำโปร่งแสง */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px; /* เว้นระยะห่างจากข้อความด้านบน */
+    backdrop-filter: blur(3px); /* เพิ่มความเบลอเล็กน้อย */
+    border: 1px solid #333; /* ขอบจางๆ */
+    max-width: 550px; /* จำกัดความกว้างของกล่อง */
+}
+
+.skills-box h4 {
+    font-family: 'Orbitron', sans-serif; /* ใช้ฟอนต์ Tech */
+    color: #00aaff; /* สีเดียวกับ H1 */
+    font-size: 1.4em;
+    margin: 0 0 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้ปัดขึ้นบรรทัดใหม่ */
+    gap: 15px; /* ระยะห่างระหว่างไอเท็ม */
+    justify-content: flex-start; /* จัดชิดซ้าย */
+}
+
+.skill-item {
+    background-color: rgba(40, 40, 40, 0.8); /* พื้นหลังของแต่ละ Skill */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 90px; /* ขนาดของกล่อง Skill */
+    transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: scale(1.05); /* ขยายเมื่อเมาส์ชี้ */
+    background-color: rgba(50, 50, 50, 0.9);
+    border-color: #00aaff;
+}
+
+.skill-item img {
+    height: 40px; /* ขนาดไอคอน */
+    width: 40px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    color: #ccc;
+    font-size: 0.85em;
+    margin: 0;
+    line-height: 1.3;
+}

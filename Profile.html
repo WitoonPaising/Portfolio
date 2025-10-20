@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witoon's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#certificates">Certificates</a>
+        
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            
+            <div class="hero-text">
+                <h2>Hi, I'm Witoon</h2> 
+                <h1>Game development</h1>
+                <p>Computer Engineering student passionate about indie game development and creative gameplay design using Unity.. Always learning, always building.
+                </p>
+
+                <div class="skills-box">
+                    <h4>My Skills</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <img src="Pic/Unitypic.png" alt="Python">
+                            <!-- <p>Unity</p> -->
+                        </div>
+    
+                        <div class="skill-item">
+                            <img src="Pic/Csharp.png" alt="C#">
+                            <!-- <p>C#</p> -->
+                        </div>
+    
+                        <div class="skill-item">
+                            <img src="Pic/C.png" alt="C">
+                            <!-- <p>C</p> -->
+                        </div>
+    
+                        <div class="skill-item">
+                            <img src="Pic/python.png" alt="Python">
+                            <!-- <p>Python</p> -->
+                        </div>
+    
+                        <div class="skill-item">
+                            <img src="Pic/html.png" alt="HTML">
+                            <!-- <p>HTML</p> -->
+                        </div>
+                        
+                        <div class="skill-item">
+                            <img src="Pic/css.png" alt="CSS">
+                            <!-- <p>CSS</p> -->
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="Pic/php.png" alt="JavaScript">
+                            <!-- <p>PHP</p> -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+    
+            <div class="hero-image">
+                <img src="Pic/Loydi/Me.png" alt="Witoon Profile Picture"> 
+            </div>
+    
+        </div>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="card-container">
+            <div class="card" onclick="openModal('loydi-modal')">
+                <img src="Pic/Loydi/LOYDI01.jpg" alt="Project 1 Preview">
+                <h3>ลอยกระทง Digital (LoyDi)</h3>
+                <p>LOY KRATHONG DIGITAL 2024 เป็นโปรเจกส่งเสริมการท่องเที่ยวจังหวัดพิษณุโลกและเพื่อช่วยลดขยะที่สร้างมลพิษให้กลับแม่น้ำ</p>
+            </div>
+            <div class="card" onclick="openModal('project2-modal')">
+                <img src="cvpdf/thiaochumchon.png" alt="Project 2 Preview">
+                <h3>How to Testweb</h3>
+                <p>Mini game ที่ถูกสร้างมาเพื่อเอาไปใช้ใน Project Virtual Tour ของทางสาขาวิศวกรรมคอมพิวพ์เตอร์</p>
+            </div>
+            </div>
+    </section>
+
+     <section id="activities">
+        <h2>Activities</h2>
+        <div class="card-container">
+            <div class="card" onclick="openModal('activity-2-modal')">
+                <img src="cvpdf/5.png" alt="AUTOMATION EXPO 2025">
+                <h3>Cyber Hackathon</h3>
+                <p>ระหว่างวันที่ 1-3 ธันวาคม 2567 เข้าร่วมการแข่งขันและอบรม Cyber Hackathon</p>
+            </div>
+
+            <div class="card" onclick="openModal('activity-3-modal')">
+                <img src="Pic/Active/A100.jpg" alt="AUTOMATION EXPO 2025">
+                <h3>AUTOMATION EXPO 2025</h3>
+                <p>วันที่ 19-20 มีนาคม 2568 เยี่ยมชมงาน “AUTOMATION EXPO 2025” และ “EEC Automation Park” ณ มหาวิทยาลัยบูรพา เพื่อศึกษาดูงานด้านระบบอัตโนมัติอุตสาหกรรมและหุ่นยนต์สมัยใหม่</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <div class="card-container">
+            <div class="card" onclick="openModal('cert1-modal')">
+                <img src="certi/power.png" alt="Certificate 1">
+                <h3>หลักสูตรการออกแบบประสบการณ์ผู้ใช้และส่วนติดต่อผู้ใช้</h3>
+                <p>ได้รับจากกรมพัฒนาฝีมือแรงงาน เมื่อวันที่ 10 เมษายน พ.ศ.2567</p>
+            </div>
+            <div class="card" onclick="openModal('cert2-modal')">
+                <img src="Pic/Certifi/certifiDocker.png" alt="Certificate 1">
+                <h3>การอบรมเชิงปฏิบัติการหลักสูตร CONTAINER TECHNOLOGY (DOCKER, KUBERNETES)</h3>
+                <p>ได้รับจากสาขาวิศวกรรมคอมพิวเตอร์ เมื่อวันที่ 8-9 มีนาคม พ.ศ.2568</p>
+            </div>
+
+            <div class="card" onclick="openModal('cert3-modal')">
+                <img src="Pic/Certifi/certifiCyber.png" alt="Certificate 1">
+                <h3>การอบรมโครงการพัฒนาทักษะด้านความมั่นคงปลอดภัยทางไซเบอร์</h3>
+                <p>ได้รับจากสาขาวิศวกรรมคอมพิวเตอร์ เมื่อวันที่ 23 กรกฎาคม พ.ศ.2567</p>
+            </div>
+
+             <div class="card" onclick="openModal('cert4-modal')">
+                <img src="Pic/Certifi/certifiFortinet.png" alt="Certificate 1">
+                <h3>the WorkshopCybersecurity Awareness 2024</h3>
+                <p>ได้รับจาก FORTINET เมื่อวันที่ 23 กรกฎาคม พ.ศ.2567</p>
+            </div>
+
+        <div class="card" onclick="openModal('cert5-modal')">
+                <img src="Pic/Certifi/certifiHack.png" alt="Certificate 1">
+                <h3>โครงการอบรมเชิงปฏิบัติการ และแข่งขันทักษะความปลอดภัยทางไซเบอร์ ครั้งที่ 2</h3>
+                <p>ได้รับจาก PSRU CYBER HACKATHON#2 เมื่อวันที่ 3 ธันวาคม พ.ศ.2567</p>
+            </div>
+
+        <div class="card" onclick="openModal('cert6-modal')">
+                <img src="Pic/Certifi/certifiIot.png" alt="Certificate 1">
+                <h3>การอบรมโครงการพัฒนาทักษะด้าน IoT และระบบอัตโนมัติ</h3>
+                <p>ได้รับจากสาขาวิศวกรรมคอมพิวเตอร์ เมื่อวันที่ 19 กรกฎาคม พ.ศ.2567</p>
+            </div>
+
+        <div class="card" onclick="openModal('cert7-modal')">
+                <img src="Pic/Certifi/certifiDev.png" alt="Certificate 1">
+                <h3>การอบรมหลักสูตร SOFTWARE DEVELOPER</h3>
+                <p>ได้รับจากสาขาวิศวกรรมคอมพิวเตอร์ เมื่อวันที่ 24 พฤศจิกายน พ.ศ.2567</p>
+            </div>
+
+        <div class="card" onclick="openModal('cert8-modal')">
+                <img src="Pic/Certifi/certificateAis.jpg" alt="Certificate 1">
+                <h3>โครงการส่งเสริมการเรียนรู้หน้าที่พลเมืองดิจิทัล “อุ่นใจไซเบอร์”</h3>
+                <p>ได้รับจากหลักสูตร Aunjaicyber สำหรับนักศึกษา PSRU  เมื่อวันที่ 25 มกราคม พุทธศักราช 2567</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="loydi-modal" class="modal">
+        <div class="modal-content modal-content-large">
+            <span class="close" onclick="closeModal('loydi-modal')">&times;</span>
+            <div></div>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img class="carousel-image" src="Pic/Loydi/LOYDI01.jpg" alt="Design System">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="Pic/Loydi/LOYDI02.jpg" alt="Swagger API">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="cvpdf/pgtestcase.png" alt="Swagger APDD">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="cvpdf/pgauto.png" alt="App Screenshot">
+                        </li>
+                    </ul>
+                </div>
+    
+                <button class="carousel-button carousel-button--left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-button carousel-button--right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+    
+            <div class="project-details">
+                <h2>ลอยกระทง Digital (LoyDi)</h2>
+                <h3>คำอธิบาย</h3>
+                <p>
+                    ลอยกระทง Digital (LoyDi) หรือลอยกระทงดิจิตอลประจำปี 2567 เป็นโปรเจกต์ทำงานร่วมกับองค์การบริหารส่วนจังหวัดพิษณุโลกและสาขาวิชาวิศวกรรมคอมพิวเตอร์ สาขาศิลปะและนวัตกรรม ร่วมกับสถาบันเทคโนโลยีดิจิทัล มหาวิทยาลัยราชภัฏพิบูลสงคราม
+                โดยจะแบ่งเป็น 3 ทีม ประกอบไปด้วย ทีมWebapp ทีมออกแบบ และทีมUnity โดย Webapp จะส่งข้อมูลรูปแบบกระทงผ่าน json ไฟล์ไปให้ฝั่ง Unity เพื่อทำการโหลดข้อมูลรูปแบบของกระทง </p>
+    
+                <h3>หน้าที่ที่รับผิดชอบ (Game Developer)</h3>
+                <p>
+                    ออกแบบและทำ Animation ของฉาก,พื้นหลัง,กระทงและรูปแบบเกมเพลย์
+                </p>
+    
+                <h3>เทคโนโลยีที่ใช้</h3>
+                <div class="tech-stack">
+                    <img src="Pic/Unitypic.png" alt="Unity" title="Unity">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div id="project2-modal" class="modal">
+        <div class="modal-content modal-content-large">
+            <span class="close" onclick="closeModal('project2-modal')">&times;</span>
+            <div></div>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img class="carousel-image" src="cvpdf/thiaochumchon.png" alt="Design System">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="cvpdf/tsautotest.png" alt="Swagger API">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="cvpdf/tstestcase.png" alt="App Screenshot">
+                        </li>
+                    </ul>
+                </div>
+    
+                <button class="carousel-button carousel-button--left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-button carousel-button--right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+    
+            <div class="project-details">
+                <h2>ThiaoChumChon</h2>
+                <h3>คำอธิบาย</h3>
+                <p>
+                    แอปส่งเสริมการท่องเที่ยวชุมชนที่ออกแบบมาเพื่อเชื่อมโยงนักท่องเที่ยวกับผู้ประกอบการและชุมชนท้องถิ่น ผู้ใช้สามารถเลือกกิจกรรมที่หลากหลาย เช่น ล่องแพ สำรวจถ้ำ ทัวร์เชิงนิเวศ หรือเวิร์กช็อปวัฒนธรรมท้องถิ่น พร้อมทั้งสามารถดูรายละเอียดกิจกรรม รีวิวจากผู้ใช้คนอื่น ๆ และจองกิจกรรมผ่านแอปได้อย่างสะดวก ระบบรองรับการจัดการจอง การแจ้งเตือนสถานะการจอง และมีฟีเจอร์แนะนำกิจกรรมตามความสนใจของผู้ใช้ ช่วยส่งเสริมเศรษฐกิจในชุมชนและสร้างประสบการณ์ท่องเที่ยวที่ยั่งยืนและมีคุณค่า
+                </p>
+    
+                <h3>หน้าที่ที่รับผิดชอบ (Tester)</h3>
+                <p>
+                    Manual Testing: ออกแบบ Test Case และดำเนินการทดสอบแอปพลิเคชันเพื่อค้นหา Bug และตรวจสอบความถูกต้องของฟังก์ชัน พร้อมออกแบบและบันทึกผลใน Google Sheet อย่างเป็นระบบ
+                    ทำงานร่วมกับ ทีมพัฒนา และ นักออกแบบ UX/UI เพื่อเสนอแนวทางแก้ไขปัญหาที่พบ และปรับปรุงประสบการณ์ผู้ใช้
+                    <p>Automated Testing: พัฒนาและรันสคริปต์ด้วย Robot Framework และ Appium Library เพื่อทดสอบฟังก์ชันซ้ำ ๆ บน Android Studio Emulator พร้อมบันทึกผลการทดสอบลง Google Sheet แบบอัตโนมัติและเรียลไทม์</p>
+                    Security Testing (Pentest เบื้องต้น): ตรวจสอบช่องโหว่ SQL Injection – Login Bypass และจัดทำรายงานผลการทดสอบเพื่อส่งมอบให้ทีมพัฒนา
+                    <p>Requirement Gathering: ประสานงานและรวบรวมความต้องการ (Requirements) จากผู้ใช้งานจริงในพื้นที่ เพื่อใช้ในการพัฒนาฟีเจอร์ให้ตรงกับความต้องการ</p>
+                </p>
+    
+                <h3>เทคโนโลยีที่ใช้</h3>
+                <div class="tech-stack">
+                    <img src="cvpdf/appium.png" alt="Appium" title="Appium">
+                    <img src="cvpdf/appiumispec.png" alt="Appium inspector" title="Appium-inspector">
+                    <img src="cvpdf/Robot-framework.png" alt="Robot-framework" title="Robot-framework">
+                    <img src="cvpdf/Android_Studio.png" alt="Android-Studio-Emulater" title="Android-Studio-Emulater">
+                    <img src="cvpdf/python-logo.png" alt="python" title="python">
+                    <img src="cvpdf/Google_Sheets.png" alt="Google-Sheets" title="Google-Sheets">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="activity-2-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('activity-2-modal')">&times;</span>
+            <h2>Cyber Hackathon</h2>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img class="carousel-image" src="Pic/Active/A100.jpg" alt="Design System">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="Pic/Active/A101.jpg" alt="Swagger API">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="Pic/Active/A102.jpg" alt="App Screenshot">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button carousel-button--left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-button carousel-button--right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>    
+                </div>
+            </div>
+            <p>ระหว่างวันที่ 1-3 ธันวาคม 2567 เข้าร่วมการแข่งขันและอบรม Cyber Hackathon</p>
+        </div>
+    </div>
+
+     <div id="activity-3-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('activity-3-modal')">&times;</span>
+            <h2>AUTOMATION EXPO 2025</h2>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img class="carousel-image" src="Pic/Active/A100.jpg" alt="Design System">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="Pic/Active/A101.jpg" alt="Swagger API">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="Pic/Active/A102.jpg" alt="App Screenshot">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button carousel-button--left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-button carousel-button--right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+            <p>วันที่ 19-20 มีนาคม 2568 เยี่ยมชมงาน “AUTOMATION EXPO 2025” และ “EEC Automation Park” ณ มหาวิทยาลัยบูรพา เพื่อศึกษาดูงานด้านระบบอัตโนมัติอุตสาหกรรมและหุ่นยนต์สมัยใหม่</p>
+        </div>
+    </div>
+        
+    <div id="cert1-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert1-modal')">&times;</span>
+            <h2>หลักสูตรการออกแบบประสบการณ์ผู้ใช้และส่วนติดต่อผู้ใช้</h2>
+            <img src="Pic/Certifi/certificateAis.jpg" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert2-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert2-modal')">&times;</span>
+            <h2>การอบรมเชิงปฏิบัติการหลักสูตร CONTAINER TECHNOLOGY (DOCKER, KUBERNETES)</h2>
+            <img src="Pic/Certifi/certifiDocker.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert3-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert3-modal')">&times;</span>
+            <h2>การอบรมโครงการพัฒนาทักษะด้านความมั่นคงปลอดภัยทางไซเบอร์</h2>
+            <img src="Pic/Certifi/certifiCyber.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert4-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert4-modal')">&times;</span>
+            <h2>the WorkshopCybersecurity Awareness 2024</h2>
+            <img src="Pic/Certifi/certifiFortinet.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert5-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert5-modal')">&times;</span>
+            <h2>โครงการอบรมเชิงปฏิบัติการ และแข่งขันทักษะความปลอดภัยทางไซเบอร์ ครั้งที่ 2</h2>
+            <img src="Pic/Certifi/certifiHack.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert6-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert6-modal')">&times;</span>
+            <h2>การอบรมโครงการพัฒนาทักษะด้าน IoT และระบบอัตโนมัติ</h2>
+            <img src="Pic/Certifi/certifiIot.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert7-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert7-modal')">&times;</span>
+            <h2>การอบรมหลักสูตร SOFTWARE DEVELOPER</h2>
+            <img src="Pic/Certifi/certifiDev.png" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+    <div id="cert8-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert8-modal')">&times;</span>
+            <h2>โครงการส่งเสริมการเรียนรู้หน้าที่พลเมืองดิจิทัล “อุ่นใจไซเบอร์”</h2>
+            <img src="Pic/Certifi/certificateAis.jpg" alt="Certificate 1" style="width:100%;">
+        </div>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeImageModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+</div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
