@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Programmer</title>
+  <meta name="description" content="Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1120; --text:#e2e8f0; --muted:#94a3b8; --panel:#1e293b; --stroke:#334155;
+      --accent:#0ea5e9; --accent-2:#6366f1; --accent-3:#22c55e;
+      --shadow:0 6px 18px rgba(0,0,0,.3);
+      --glow:0 0 12px rgba(14,165,233,.6), 0 0 24px rgba(99,102,241,.3);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; color:var(--text); font-family:Inter, system-ui, sans-serif; background:var(--bg)}
+    a{color:var(--accent); text-decoration:none; transition:all .25s ease}
+    a:hover{color:#fff; text-shadow:0 0 8px var(--accent)}
+    .mono{font-family:"JetBrains Mono", monospace}
+    .retro{font-family:"Press Start 2P", monospace}
+
+    .wrap{max-width:1100px; margin:auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:48px; height:48px; border-radius:14px; background:conic-gradient(from 210deg, var(--accent), var(--accent-2)); box-shadow:var(--glow); animation:rotate 6s linear infinite}
+    @keyframes rotate{to{transform:rotate(1turn)}}
+    h1{font-size:22px; margin:0}
+    .btn-cta{display:inline-flex; align-items:center; gap:8px; background:linear-gradient(90deg, var(--accent-2), var(--accent)); color:#fff; font-weight:700; padding:10px 14px; border-radius:12px; border:none; box-shadow:var(--glow); transition:transform .2s ease, box-shadow .2s ease}
+    .btn-cta:hover{transform:translateY(-2px); box-shadow:0 0 16px rgba(99,102,241,.8),0 0 24px rgba(14,165,233,.6)}
+    .btn-ghost{background:transparent; border:1px solid var(--stroke); border-radius:10px; padding:6px 10px; font-size:12px; cursor:pointer; color:var(--text); transition:all .25s ease}
+    .btn-ghost:hover{background:var(--accent); color:#fff; box-shadow:0 0 12px var(--accent)}
+
+    .hud{display:flex; align-items:center; gap:10px; padding:8px 12px; border:1px solid var(--stroke); border-radius:12px; background:rgba(255,255,255,.05); box-shadow:var(--shadow)}
+    .led{width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 6px var(--accent-3),0 0 12px var(--accent-3); animation:blink 1.5s infinite alternate}
+    @keyframes blink{0%{opacity:.5}100%{opacity:1}}
+
+    /* INTRO (รูปซ้าย-ข้อความขวา) */
+    .intro-section{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-bottom:40px}
+    .intro{flex:1; display:flex; justify-content:center}
+    .intro-photo{width:320px; height:320px; border-radius:50%; object-fit:cover; box-shadow:0 0 30px rgba(14,165,233,.5), 0 0 60px rgba(99,102,241,.3)}
+    .intro-text{flex:1; min-width:300px}
+    .intro-text h2{font-size:36px; margin:0}
+    .intro-text .role{font-size:22px; font-weight:700; color:var(--accent); margin:8px 0 16px}
+    .intro-text p{font-size:15px; color:var(--muted); line-height:1.6}
+    .intro-text ul{margin:8px 0 0 18px; padding-left:18px; font-size:14px; color:var(--muted); line-height:1.6}
+    .buttons{margin-top:20px; display:flex; gap:12px}
+
+    /* BIO CARDS — ใช้ 2 คอลัมน์เพื่อให้ Education คู่กับ Contact */
+    .bio{margin:10px 0 16px; display:grid; gap:14px}
+    .grid-info{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    .card{background:var(--panel); border:1px solid var(--stroke); border-radius:16px; padding:12px; box-shadow:var(--shadow); transition:all .25s ease}
+    .card:hover{box-shadow:0 0 12px rgba(14,165,233,.5); transform:translateY(-2px)}
+    .card h3{margin:0 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:#1e293b; border:1px solid var(--stroke); padding:6px 10px; border-radius:999px; font-size:12px; transition:all .25s ease}
+    .chip:hover{background:var(--accent); color:#fff; box-shadow:0 0 10px var(--accent)}
+
+    .section-title{margin:18px 0 8px; font-size:18px; font-weight:800; text-shadow:0 0 8px rgba(14,165,233,.5)}
+    .section-sub{margin:-4px 0 10px; color:var(--muted); font-size:13px}
+
+    /* Gallery */
+    .gallery-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .item{background:var(--panel); border:1px solid var(--stroke); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); position:relative; transition:all .25s ease}
+    .item:hover{box-shadow:0 0 16px rgba(99,102,241,.5)}
+    .thumb{position:relative; height:180px; background:#334155; overflow:hidden; border-bottom:1px solid var(--stroke)}
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .25s ease, filter .25s ease}
+    .item:hover .thumb img{transform:scale(1.05); filter:brightness(1.1)}
+    figcaption.caption{padding:10px 12px; border-top:1px solid var(--stroke); background:rgba(255,255,255,.02)}
+    .cap-title{font-weight:700; font-size:14px; line-height:1.3}
+    .cap-sub{font-size:12px; color:var(--muted); margin-top:4px}
+
+    /* Lightbox */
+    .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; padding:20px; z-index:40}
+    .lightbox[aria-hidden="false"]{display:flex}
+    .lightbox-dialog{max-width:min(1100px,94vw); max-height:90vh; background:#0f172a; border-radius:12px; overflow:hidden; box-shadow:0 0 30px rgba(99,102,241,.7), 0 0 60px rgba(14,165,233,.5); border:1px solid var(--stroke)}
+    .lightbox-img{display:block; max-width:100%; max-height:84vh}
+    .lightbox-head{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 12px; background:#1e293b; color:#e2e8f0}
+    .lb-texts{display:flex; flex-direction:column; gap:2px}
+    #lb-title{font-weight:800; font-size:14px}
+    #lb-sub{font-size:12px; color:var(--muted)}
+    .close-btn{background:#334155; color:#e2e8f0; border:none; border-radius:10px; padding:6px 10px; cursor:pointer; transition:all .25s ease}
+    .close-btn:hover{background:var(--accent); box-shadow:0 0 12px var(--accent)}
+    .lightbox-pdf{display:block; width:min(1100px,94vw); height:84vh; border:0; background:#0f172a}
+
+    footer{margin-top:26px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-top:1px dashed var(--stroke); padding-top:16px}
+    .contact{display:flex; gap:12px; flex-wrap:wrap}
+    .contact a{background:var(--panel); border:1px solid var(--stroke); padding:8px 12px; border-radius:999px; font-size:13px; transition:all .25s ease}
+    .contact a:hover{background:var(--accent); color:#fff; box-shadow:0 0 10px var(--accent)}
+
+    /* มือถือทั่วไป: ซ่อนโลโก้ + จัดกึ่งกลางทุกอย่าง */
+    @media (max-width: 640px){
+      .wrap{padding:20px}
+      header{flex-direction:column; align-items:center; text-align:center; gap:12px}
+      .brand{flex-direction:column; align-items:center; gap:8px}
+      .logo{display:none}              /* ซ่อนโลโก้ */
+      h1{font-size:20px; line-height:1.25; max-width:92%; word-break:break-word; text-align:center}
+      .hud{justify-content:center; font-size:12px}
+      .btn-cta{border-radius:10px; font-size:14px; padding:8px 14px; box-shadow:none}
+
+      .intro-section{flex-direction:column; text-align:center}
+      .intro-photo{width:240px; height:240px}
+
+      .grid-info{grid-template-columns:1fr; justify-items:center}
+      .card{width:100%; max-width:560px}
+      .gallery-grid{grid-template-columns:1fr}
+      footer{flex-direction:column; text-align:center}
+    }
+
+    /* มือถือจอเล็กมาก */
+    @media (max-width: 480px){
+      h1{font-size:18px}
+      .intro-photo{width:220px; height:220px}
+      .intro-text h2{font-size:30px}
+      .intro-text .role{font-size:18px}
+      .intro-text p{font-size:14px}
+      .buttons{gap:10px; justify-content:center}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>วิทูร ไพรสิงห์ / <span class="retro" style="font-size:16px"></span> Portfolio</h1>
+          <div class="hud mono"><span class="led"></span><span>Build v1.4</span><span></span><span></span></div>
+        </div>
+      </div>
+      <!-- <a class="btn-cta" href="assets/CV.pdf" download>Download CV (PDF)</a> -->
+    </header>
+
+    <!-- INTRO PROFILE -->
+    <section class="intro-section">
+      <div class="intro">
+        <img src="images/profile.png" alt="Atsadawut portrait" class="intro-photo">
+      </div>
+      <div class="intro-text">
+        <h2>สวัสดีครับ ผม วิทูร ไพรสิงห์</h2>
+        <p>ผมเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ที่สนใจการพัฒนา Software, Web Application และโครงสร้างพื้นฐานด้าน DevOps มีพื้นฐานทั้งด้าน Programming, Cloud และการทำงานแบบทีมในสภาพแวดล้อมที่เปลี่ยนแปลงรวดเร็ว โดยมีทักษะและประสบการณ์ดังนี้:</p>
+        <ul>
+          <li>มีความสามารถการเขียนโปรแกรมหลายภาษา เช่น Python, JavaScript และ C# รวมถึงประสบการณ์ในการพัฒนาด้วย .NET Core</li>
+          <li>มีประสบการณ์ในการพัฒนาและดีพลอยเว็บแอปพลิเคชันด้วยเฟรมเวิร์ก เช่น React และ Angular</li>
+          <li>มีประสบการณ์ในการทำงานกับฐานข้อมูล เช่น SQL Server</li>
+          <li>มีความเข้าใจแนวปฏิบัติที่ดีในการพัฒนาซอฟต์แวร์ (Software Best Practices) เช่น การใช้ Version Control การทดสอบระบบ และการทำ Code Review</li>
+          <li>มีทักษะและประสบการณ์ในการสร้างเกมด้วย Unity</li>
+          <li>มีทักษะการแก้ปัญหาที่ดี สามารถวิเคราะห์และจัดการกับปัญหาทางเทคนิคที่ซับซ้อนได้</li>
+          <li>มีทักษะการสื่อสารที่ดี และสามารถทำงานได้อย่างมีประสิทธิภาพในสภาพแวดล้อมที่มีการเปลี่ยนแปลงรวดเร็ว</li>
+          <li>มีความต้องการเรียนรู้ตลอดเวลา ติดตามเทรนด์และเทคโนโลยีใหม่ ๆ อยู่เสมอ เพื่อนำมาพัฒนาทักษะและสร้างคุณค่าให้กับโปรเจกต์ที่รับผิดชอบ</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BIO CARDS -->
+    <section class="bio">
+      <div class="grid-info">
+        <div class="card">
+          <h3>Programming Languages</h3>
+          <div class="chips mono">
+            <span class="chip">C#</span>
+            <span class="chip">C</span>
+            <span class="chip">Python</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">HTML</span>
+            <span class="chip">PHP</span>
+            <span class="chip">CSS</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tools & Software</h3>
+          <div class="chips mono">
+            <span class="chip">Unity</span>
+            <span class="chip">Visual Studio Code</span>
+            <span class="chip">Git/GitHub</span>
+            <span class="chip">Angular</span>
+            <span class="chip">React</span>
+            <span class="chip">GitHub Action</span>
+            <span class="chip">Docker</span>
+          </div>
+        </div>
+        <!-- Education วางก่อน Contact เพื่อให้จับคู่กันใน grid 2 คอลัมน์ -->
+        <div class="card">
+          <h3>Education</h3>
+          <p class="muted">มหาลัยราชภัฏพิบูลสงคราม - วิศวกรรมคอมพิวเตอร์</p>
+          <div class="chips"><button class="btn-ghost" data-grade>Transcript</button></div>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <div class="chips">
+            <a class="chip" href="mailto:witoon12377@gmail.com">witoon12377@gmail.com</a>
+            <span class="chip">093-154-0882</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <h2 class="section-title">Works / Projects</h2>
+    <section class="gallery-grid" id="works">
+      <figure class="item">
+        <div class="thumb"><img src="images/work-01.jpg" alt="Work 1"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Loy Krathong Digital — Unity</div>
+          <div class="cap-sub">Loy Krathong Online developed in Unity</div>
+        </figcaption>
+      </figure>
+      <figure class="item">
+        <div class="thumb"><img src="images/work-02.jpg" alt="Work 2"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Loy Krathong Digital — Unity</div>
+          <div class="cap-sub">a collaborative project between the Phitsanulok Provincial Administrative Organization and Pibulsongkram Rajabhat University.</div>
+        </figcaption>
+      </figure>
+      <figure class="item">
+        <div class="thumb"><img src="images/work-03.jpg" alt="Work 3"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Digital Loy Krathong Web Application</div>
+          <div class="cap-sub">Communication between the web page and the game to display the floating Krathongs on the screen.</div>
+        </figcaption>
+      </figure>
+      <figure class="item">
+        <div class="thumb"><img src="images/work-04.jpg" alt="Work 4"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Project</div>
+          <div class="cap-sub">The game project is a prototype designed to promote the program and provide basic knowledge.</div>
+        </figcaption>
+      </figure>
+      <figure class="item">
+        <div class="thumb"><img src="images/work-05.jpg" alt="Work 5"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Unity 2D Top-Down Code Example</div>
+          <div class="cap-sub">Example Unity Code for a Small-to-Medium 2D Top-Down Project</div>
+        </figcaption>
+      </figure>
+      <figure class="item">
+        <div class="thumb"><img src="images/work-06.jpg" alt="Work 6"/></div>
+        <figcaption class="caption">
+          <div class="cap-title">Dialogue System</div>
+          <div class="cap-sub">Dialogue System for displaying story text and communicating with NPCs.</div>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- CERTS -->
+    <h2 class="section-title">Certificates/Activity</h2>
+    <section class="gallery-grid" id="certs">
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiCyber.png" alt="cert 1"/></div><figcaption class="caption"><div class="cap-title">Cyber Security</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiIot.png" alt="cert 2"/></div><figcaption class="caption"><div class="cap-title">IoT</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiDev.png" alt="cert 3"/></div><figcaption class="caption"><div class="cap-title">Software Developer</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiDocker.png" alt="cert 4"/></div><figcaption class="caption"><div class="cap-title">Container Technology</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiHack.png" alt="cert 5"/></div><figcaption class="caption"><div class="cap-title">Cyber Hackathon</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certifiFortinet.png" alt="cert 6"/></div><figcaption class="caption"><div class="cap-title">Cyber Awareness</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/certificateAis.jpg" alt="cert 7"/></div><figcaption class="caption"><div class="cap-title">อุ่นใจไซเบอร์</div></figcaption></figure>
+      <figure class="item"><div class="thumb"><img src="images/Certifi/Foundationalcs.png" alt="cert 8"/></div><figcaption class="caption"><div class="cap-title">Foundational C#</div></figcaption></figure>
+    </section>
+
+    <footer>
+      <div class="contact">
+        <a href="mailto:boom.94228@gmail.com">witoon12377@gmail.com</a>
+        <!-- <a href="https://github.com/boom94228-dot" target="_blank">GitHub</a> -->
+      </div>
+      <div class="mono" style="font-size:12px">© 2025 Witoon • Built with HTML/CSS/JS</div>
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX (รองรับรูปและ PDF) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Preview dialog">
+    <div class="lightbox-dialog">
+      <div class="lightbox-head">
+        <div class="lb-texts">
+          <div id="lb-title"></div>
+          <div id="lb-sub"></div>
+        </div>
+        <button class="close-btn" id="lb-close" aria-label="Close preview">Close</button>
+      </div>
+
+      <!-- แสดงรูป -->
+      <img id="lb-img" class="lightbox-img" alt="ภาพขยาย" style="display:none"/>
+
+      <!-- แสดง PDF -->
+      <iframe id="lb-pdf" class="lightbox-pdf" title="PDF preview" style="display:none"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbPdf = document.getElementById('lb-pdf');
+    const lbClose = document.getElementById('lb-close');
+    const lbTitle = document.getElementById('lb-title');
+    const lbSub = document.getElementById('lb-sub');
+
+    function openLBImage(src, title = '', sub = '', alt = ''){
+      lbImg.style.display = 'block';
+      lbPdf.style.display = 'none';
+      lbImg.src = src;
+      lbImg.alt = alt || title || 'preview image';
+      lbTitle.textContent = title;
+      lbSub.textContent = sub;
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      lbClose.focus();
+    }
+
+    function openLBPdf(pdfSrc, title = '', sub = ''){
+      lbImg.style.display = 'none';
+      lbPdf.style.display = 'block';
+      lbPdf.src = `${pdfSrc}#navpanes=0&toolbar=1&view=FitH`;
+      lbTitle.textContent = title;
+      // lbSub.textContent = sub || 'เลื่อนเพื่ออ่าน • ใช้ปุ่มดาวน์โหลดจาก viewer ได้';
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      lbClose.focus();
+    }
+
+    function closeLB(){
+      lb.setAttribute('aria-hidden','true');
+      lbImg.removeAttribute('src');
+      lbPdf.removeAttribute('src');
+      lbImg.style.display = 'none';
+      lbPdf.style.display = 'none';
+      lbTitle.textContent = '';
+      lbSub.textContent = '';
+      document.body.style.overflow='';
+    }
+
+    // คลิกภาพในแกลเลอรี -> เปิดรูป
+    document.addEventListener('click', e => {
+      const img = e.target.closest('.thumb img');
+      if(img){
+        e.preventDefault();
+        const fig = img.closest('figure');
+        const title = fig?.querySelector('.cap-title')?.textContent.trim() || img.alt || '';
+        const sub = fig?.querySelector('.cap-sub')?.textContent.trim() || '';
+        openLBImage(img.src, title, sub, img.alt);
+        return;
+      }
+
+      // ปุ่ม Transcript -> เปิด PDF
+      const btn = e.target.closest('[data-grade]');
+      if(btn){
+        e.preventDefault();
+        const pdfPath = 'assets/grades.pdf';
+        try{ openLBPdf(pdfPath, 'Transcript'); }
+        catch{ window.open(pdfPath, '_blank'); }
+        return;
+      }
+    });
+
+    // ปิดด้วยคลิกพื้นหลัง/ปุ่ม/ESC
+    lb.addEventListener('click', e => { if(e.target === lb) closeLB(); });
+    lbClose.addEventListener('click', closeLB);
+    window.addEventListener('keydown', e => { if(e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') closeLB(); });
+  </script>
+</body>
+</html>
