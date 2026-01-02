@@ -133,8 +133,8 @@
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <h1>วิทูร ไพรสิงห์ / <span class="retro" style="font-size:16px"></span> Portfolio</h1>
-          <div class="hud mono"><span class="led"></span><span>Build v1.4</span><span></span><span></span></div>
+          <!-- <h1>วิทูร ไพรสิงห์ / <span class="retro" style="font-size:16px"></span> Portfolio</h1> -->
+          <div class="hud mono"><span class="led"></span><span>Portfolio</span><span></span><span></span></div>
         </div>
       </div>
       <!-- <a class="btn-cta" href="assets/CV.pdf" download>Download CV (PDF)</a> -->
@@ -143,7 +143,7 @@
     <!-- INTRO PROFILE -->
     <section class="intro-section">
       <div class="intro">
-        <img src="images/profile.png" alt="Atsadawut portrait" class="intro-photo">
+        <img src="images/profile.png" alt="Witoon" class="intro-photo">
       </div>
       <div class="intro-text">
         <h2>สวัสดีครับ ผม วิทูร ไพรสิงห์</h2>
@@ -353,7 +353,7 @@
       const btn = e.target.closest('[data-grade]');
       if(btn){
         e.preventDefault();
-        const pdfPath = 'assets/grades.pdf';
+        const pdfPath = 'images/Grade.pdf';
         try{ openLBPdf(pdfPath, 'Transcript'); }
         catch{ window.open(pdfPath, '_blank'); }
         return;
